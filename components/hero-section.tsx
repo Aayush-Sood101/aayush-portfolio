@@ -244,14 +244,6 @@ export function HeroSection() {
             transition={{ duration: 1, delay: 2 }}
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
           >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-              className="flex flex-col items-center gap-2 text-gray-400 dark:text-gray-500"
-            >
-              <span className="text-sm font-medium">Scroll to explore</span>
-              <ArrowDown className="w-5 h-5" />
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>
