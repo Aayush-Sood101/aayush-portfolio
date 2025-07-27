@@ -1,7 +1,5 @@
 import type { Config } from "tailwindcss";
 
-// all in fixtures is set to tailwind v3 as interims solutions
-
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -11,7 +9,14 @@ const config: Config = {
     "*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
+    fontFamily: {
+      poppins: ['var(--font-poppins)'],
+      inter: ['var(--font-inter)'],
+    },
   	extend: {
+      screens: {
+        '3xl': '1800px',
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -85,11 +90,61 @@ const config: Config = {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+        'float': {
+          '0%, 100%': { 
+            transform: 'translateY(0)' 
+          },
+          '50%': { 
+            transform: 'translateY(-10px)' 
+          },
+        },
+        'shimmer': {
+          '0%': {
+            backgroundPosition: '-100% 0',
+          },
+          '100%': {
+            backgroundPosition: '200% 0',
+          },
+        },
+        'gradient': {
+          '0%': { 
+            backgroundPosition: '0% 50%' 
+          },
+          '50%': { 
+            backgroundPosition: '100% 50%' 
+          },
+          '100%': { 
+            backgroundPosition: '0% 50%' 
+          },
+        },
+        'pulse-glow': {
+          '0%, 100%': { 
+            boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' 
+          },
+          '50%': { 
+            boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)' 
+          },
+        },
+        'fade-in-up': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(20px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)',
+          },
+        },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+        'float': 'float 5s ease-in-out infinite',
+        'shimmer': 'shimmer 2s infinite',
+        'gradient': 'gradient 5s ease infinite',
+        'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
   		}
   	}
   },
